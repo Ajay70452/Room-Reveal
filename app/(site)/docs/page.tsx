@@ -2,8 +2,8 @@ import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Docs Page - Solid SaaS Boilerplate",
-  description: "This is Docs page for Solid Pro",
+  title: "Room Reveal",
+  description: "Room Reveal the Wallpaper and Wall Tiles visualizer app",
   // other metadata
 };
 
