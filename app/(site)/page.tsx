@@ -15,8 +15,8 @@ import Testimonial from "@/components/Testimonial";
 import UploadGuideComponent from "@/components/Explanation/UploadGuideComponent";
 
 export const metadata: Metadata = {
-  title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
-  description: "This is Home for Solid Pro",
+  title: "Room Reveal- The Wallpaper and Wall Tiles Visualizer App",
+  description: "Room Reveal",
   // other metadata
 };
 
