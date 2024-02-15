@@ -37,7 +37,7 @@ const Header = () => {
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
-          <a href="/">
+          <Link href="/">
             <Image
               src="/images/logo/logo-plain.png"
               alt="logo"
@@ -52,7 +52,7 @@ const Header = () => {
               height={40}
               className="w-full dark:hidden"
             />
-          </a>
+          </Link>
 
           {/* <!-- Hamburger Toggle BTN --> */}
           <button
@@ -151,16 +151,18 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            
-
-            
-
+          <div className="mt-7 flex items-center gap-6 xl:mt-0">            
+            <Link
+              href={"/auth/signin"}
+              className="text-lg font-semibold text-primary duration-300 ease-in-out hover:text-primaryho"
+            >
+              Login
+            </Link>
             <Link
               href="#pricing"
               className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
             >
-              Buy now
+              Get Started
             </Link>
           </div>
         </div>

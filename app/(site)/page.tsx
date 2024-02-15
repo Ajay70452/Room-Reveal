@@ -13,6 +13,10 @@ import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 import UploadGuideComponent from "@/components/Explanation/UploadGuideComponent";
+import Lines from "@/components/Lines";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Room Reveal- The Wallpaper and Wall Tiles Visualizer App",
@@ -23,20 +27,21 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <Lines />
+      <Header />
       <Hero />
       <FuturisticShopping />
       <UploadGuideComponent />
       <Feature />
-      
-      
-       
+
       <CTA />
       <Pricing />
       <FAQ />
-      
-      
+
       <Contact />
       <Blog />
+      <Footer />
+      <ScrollToTop />
     </main>
   );
 }
