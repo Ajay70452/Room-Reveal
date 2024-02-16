@@ -4,7 +4,6 @@ import NextImage from "next/image";
 import { useRouter } from "next/navigation";
 import React, {
   Suspense,
-  SyntheticEvent,
   useEffect,
   useRef,
   useState,
@@ -20,12 +19,8 @@ import "react-image-crop/dist/ReactCrop.css";
 import { useDebounceEffect } from "./useDebounceEffect";
 import { canvasPreview } from "./canvasPreview";
 
-interface ImageData {
-  file: File | string;
-}
-
 const ImageEditor = () => {
-  const { imageData } = useImageData();
+  const { imageData ,setEditedImage} = useImageData();
   const [imageUrl, setImageUrl] = useState("");
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -38,9 +33,10 @@ const ImageEditor = () => {
   useEffect(() => {
     const reader = new FileReader();
 
-    if (typeof imageData?.file === "object") {
-      reader.readAsDataURL(imageData?.file);
-    } else {
+    console.log(imageData instanceof File, imageData)
+    if (imageData instanceof File) {
+      reader.readAsDataURL(imageData);
+    }else{
       router.push("/dashboard");
     }
 
@@ -50,6 +46,7 @@ const ImageEditor = () => {
     });
   }, [imageData]);
 
+
   function onImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
     const { width, height } = e.currentTarget;
     console.log(width, height);
@@ -57,6 +54,7 @@ const ImageEditor = () => {
       aspect: number;
     }
 
+    console.log(crop);
     const initialCrop: InitialCrop = {
       unit: "%",
       aspect: width / height,
@@ -111,6 +109,10 @@ const ImageEditor = () => {
       type: "image/png",
       quality: 1,
     });
+
+    setEditedImage({file:blob} as unknown as File);
+
+    router.push("/preview");
 
     console.log(URL.createObjectURL(blob));
     console.log(blob);
@@ -184,7 +186,7 @@ const ImageEditor = () => {
       {/* this div contains buttons for formatting image */}
       <div className="flex justify-center gap-[30px] py-5">
         <button
-          className="flex h-15 w-15 items-center justify-center rounded-full border border-black"
+          className={`flex h-15 w-15 items-center justify-center rounded-full border border-black ${crop != undefined ? "border-primaryho border-2" : ""}`}
           onClick={() => {
             const img = imgRef.current;
             if (img) {

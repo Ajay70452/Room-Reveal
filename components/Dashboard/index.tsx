@@ -7,16 +7,19 @@ import { ImageDataProvider, useImageData } from "@/app/context/ImageDataContext"
 
 const Dashboard = () => {
   const router = useRouter();
-  const {imageData, setImageData } = useImageData();
+  const { imageData, setImageData } = useImageData();
 
   const handleWallImgInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const selectedFile = e.target.files?.[0];
 
     if (selectedFile) {
-      setImageData({ file: selectedFile });
-    }else{
-      console.log("Please select file!");
+      setImageData(selectedFile);
+      console.log("hello", selectedFile);
+      router.push("/image-editor");
+      return;
+    } else {
+      console.log("Please select a file!");
     }
   }
 

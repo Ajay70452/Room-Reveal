@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({subsets: ["latin"] ,weight:"400"});
 
 import ToasterContext from "../context/ToastContext";
+import { ImageDataProvider } from "../context/ImageDataContext";
 
 export default function RootLayout({
   children,
@@ -27,8 +28,11 @@ export default function RootLayout({
         >
           {/* <Lines />
           <Header /> */}
+          <ImageDataProvider>
+
           <ToasterContext /> 
           {children}
+          </ImageDataProvider>
           {/* <Footer />
           <ScrollToTop /> */}
         </ThemeProvider>

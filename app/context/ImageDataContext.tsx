@@ -1,29 +1,29 @@
 "use client"
-import React, { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import React, { ReactNode, SetStateAction, createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
-
 interface ImageData {
-  imageData: File | null; // Type for the selected file
-  // You can add other properties if needed
+  imageData: File | null;
+  setImageData: (imageData: File | null) => void;
+  editedImage: File | null;
+  setEditedImage: (editedImage: File | null) => void;
 }
 
-const ImageDataContext = createContext<ImageData>({imageData : null});
+const ImageDataContext = createContext<ImageData>({
+  imageData: null,
+  setImageData: () => {},
+  editedImage: null,
+  setEditedImage: () => {},
+});
 
-export const ImageDataProvider: React.FC<{children : ReactNode}> = ({children}) => {
-  const [imageData, setImageData] = useState<ImageData | null>(null);
-  const router = useRouter();
+export const ImageDataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [imageData, setImageData] = useState<File | null>(null);
+  const [editedImage, setEditedImage] = useState<File | null>(null);
 
-  useEffect(() => {
-    if (imageData) {
-      router.push('/dashboard/image-editor'); // Navigate to image editor page
-    }
-  }, [imageData, router]);
-
-  // Provide the context value
   const contextValue: ImageData = {
-    imageData ,
-    setImageData
-    // Add other methods or properties as needed
+    imageData,
+    setImageData,
+    editedImage,
+    setEditedImage,
   };
 
   return (
