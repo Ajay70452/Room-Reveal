@@ -39,7 +39,7 @@ export default function Home() {
       <FAQ />
 
       <Contact />
-      <Blog />
+      {/* <Blog />  temperorily removed*/} 
       <Footer />
       <ScrollToTop />
     </main>
