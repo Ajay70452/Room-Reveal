@@ -5,7 +5,7 @@ import { useState } from "react";
 const Hero = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : any) => {
     e.preventDefault();
   };
 
@@ -38,7 +38,7 @@ const Hero = () => {
                     </button>
                   </div>
                 </form>
-
+ 
                
               </div>
             </div>

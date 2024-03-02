@@ -5,11 +5,13 @@ import Header from "@/components/Header";
 import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({subsets: ["latin"] ,weight:"400"});
 
 import ToasterContext from "../context/ToastContext";
+import { ImageDataProvider } from "../context/ImageDataContext";
 
 export default function RootLayout({
   children,
@@ -24,12 +26,15 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
         >
-          <Lines />
-          <Header />
-          <ToasterContext />
+          {/* <Lines />
+          <Header /> */}
+          <ImageDataProvider>
+
+          <ToasterContext /> 
           {children}
-          <Footer />
-          <ScrollToTop />
+          </ImageDataProvider>
+          {/* <Footer />
+          <ScrollToTop /> */}
         </ThemeProvider>
       </body>
     </html>
