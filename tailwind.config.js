@@ -16,6 +16,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        primary:"#3156D8",
         brown1: "#80471c",
         current: "currentColor",
         transparent: "transparent",
@@ -30,7 +31,6 @@ module.exports = {
         black: "#181C31",
         blackho: "#2C3149",
         blacksection: "#1C2136",
-        primary: "#80471C",
         primaryho: "#0063EC",
         meta: "#20C5A8",
         waterloo: "#757693",

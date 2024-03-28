@@ -36,7 +36,7 @@ const Catalogue = ({ serverCatalogues }: { serverCatalogues: Catalogue[] }) => {
   return (
     <div className="h-screen w-full">
       <div className="fixed top-0 z-20 w-full bg-white">
-        <div className="z-30 m-3">
+        <div className="relative z-30 m-3 w-fit">
           <BackBtn color={"black"} />
         </div>
         <div className="mx-5">

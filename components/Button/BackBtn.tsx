@@ -12,10 +12,9 @@ const BackBtn = ({color} : {color? : String}) => {
     >
       <Image
         alt="back-btn"
-        src={"/images/icon/back-btn.png"}
-        width={30}
-        height={20}
-        className="h-full max-w-full"
+        src={"/images/icon/back-btn.svg"}
+        layout="fill"
+        priority
       />
     </button>
   );

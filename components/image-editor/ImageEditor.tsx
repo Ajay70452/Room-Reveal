@@ -209,7 +209,7 @@ const ImageEditor = () => {
           }}
         >
           <NextImage
-            src="/images/icon/back-btn.png"
+            src="/images/icon/back-btn.svg"
             alt="crop-image"
             width={40}
             height={40}
@@ -221,7 +221,7 @@ const ImageEditor = () => {
           onClick={(e) => setRotate((rotate) => (rotate + 90) % 360)}
         >
           <NextImage
-            src={"/images/icon/back-btn.png"}
+            src={"/images/icon/back-btn.svg"}
             alt="rotate-image"
             width={40}
             height={40}

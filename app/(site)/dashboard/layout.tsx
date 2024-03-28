@@ -1,4 +1,5 @@
 import { ImageDataProvider } from "@/app/context/ImageDataContext";
+import BottomNav from "@/components/Navbar/BottomNav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <>
       {children}
+      <BottomNav />
     </>
   );
 }
